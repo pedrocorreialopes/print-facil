@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6757e8"><meta name="description" content="Print Fácil — capture, organize e compartilhe suas capturas com privacidade.">
+<link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="styles.css">
+<title>Print Fácil</title>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="#"><span class="logo">▣</span><span>Print <b>Fácil</b><small>CAPTURA DE TELA</small></span></a><button id="themeBtn" class="icon-btn" aria-label="Alternar tema">◐</button></header>
+<main>
+<section id="home" class="view active">
+<div class="hero">
+<div class="eyebrow"><span class="dot"></span> PRIVACIDADE EM PRIMEIRO LUGAR</div>
+<h1>Sua tela,<br><em>em um toque.</em></h1>
+<p>Capture, organize e compartilhe o que importa. Suas imagens ficam somente neste dispositivo.</p>
+<button id="captureMain" class="primary"><span>▣</span> Iniciar captura</button>
+<div class="hint" id="availability">● Captura disponível em navegadores compatíveis</div>
+</div>
+<div class="section-head"><div><h2>Últimas capturas</h2><p>Seus registros mais recentes</p></div><button class="text-btn" data-view="gallery">Ver galeria →</button></div>
+<div id="recent" class="recent-grid"><div class="empty">Ainda não há capturas salvas.</div></div>
+</section>
+<section id="gallery" class="view">
+<div class="page-title"><div><span class="eyebrow">SEU ARQUIVO PESSOAL</span><h1>Minhas capturas</h1><p>Imagens armazenadas localmente neste dispositivo.</p></div></div>
+<div class="gallery-tools"><span id="countLabel">0 imagens</span><div><button id="selectAll" class="secondary">Selecionar</button><button id="deleteSelected" class="secondary danger" disabled>Excluir selecionadas</button></div></div>
+<div id="galleryGrid" class="gallery-grid"><div class="empty">Nenhuma captura por aqui ainda.</div></div>
+</section>
+<section id="settings" class="view">
+<div class="page-title"><span class="eyebrow">PERSONALIZE</span><h1>Configurações</h1><p>Ajuste a experiência do Print Fácil.</p></div>
+<div class="settings-card">
+<label class="setting"><span><b>Botão flutuante</b><small>Mostrar o atalho dentro do aplicativo</small></span><input id="floatEnabled" type="checkbox" checked></label>
+<label class="setting"><span><b>Tamanho do botão</b><small>Diâmetro do atalho</small></span><input id="floatSize" type="range" min="48" max="76" value="60"></label>
+<label class="setting"><span><b>Transparência</b><small>Opacidade do botão</small></span><input id="floatOpacity" type="range" min="45" max="100" value="95"></label>
+<label class="setting"><span><b>Formato da imagem</b><small>Formato preferido para exportação</small></span><select id="format"><option value="image/png">PNG</option><option value="image/jpeg">JPG</option></select></label>
+<label class="setting"><span><b>Qualidade JPG</b><small>Maior qualidade gera arquivos maiores</small></span><input id="quality" type="range" min="50" max="100" value="90"></label>
+<label class="setting"><span><b>Vibração</b><small>Quando suportada pelo dispositivo</small></span><input id="vibration" type="checkbox"></label>
+<label class="setting"><span><b>Tema escuro</b><small>Alternar aparência do aplicativo</small></span><input id="darkSetting" type="checkbox"></label>
+</div>
+<div class="notice"><b>Sobre a captura de tela</b><p>Por segurança, o navegador sempre solicita que você escolha/autorize a tela ou janela a compartilhar. Uma página web não consegue capturar silenciosamente nem manter um botão sobre outros aplicativos. Para isso, use a versão Android nativa incluída como ponto de partida neste projeto.</p></div>
+</section>
+</main>
+<nav class="bottom-nav"><button class="nav-item active" data-view="home">⌂<small>Início</small></button><button class="nav-item" data-view="gallery">▦<small>Capturas</small></button><button class="nav-item" data-view="settings">⚙<small>Ajustes</small></button></nav>
+<button id="floating" class="floating" aria-label="Iniciar captura">▣</button>
+<div id="previewModal" class="modal" aria-hidden="true"><div class="modal-panel"><div class="modal-head"><div><b>Prévia da captura</b><small id="previewDate"></small></div><button id="closePreview" class="icon-btn">✕</button></div><img id="previewImage" alt="Prévia da captura"><div class="modal-actions"><button id="saveCapture" class="primary">Salvar captura</button><button id="shareCapture" class="secondary">Compartilhar</button><button id="discardCapture" class="secondary danger">Excluir</button></div></div></div>
+<div id="toast" class="toast" role="status"></div>
+<script src="app.js"></script>
+</body></html>
